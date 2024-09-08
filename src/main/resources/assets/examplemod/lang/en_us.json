@@ -1,5 +1,5 @@
 {
-  "itemGroup.examplemod": "Example Mod Tab",
-  "block.examplemod.example_block": "Example Block",
-  "item.examplemod.example_item": "Example Item"
+  "itemGroup.endless_end": "Example Mod Tab",
+  "block.endless_end.example_block": "Example Block",
+  "item.endless_end.example_item": "Example Item"
 }
