@@ -1,20 +1,13 @@
 package juni.endless_end;
 
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
+import juni.endless_end.blocks.Blocks;
+import juni.endless_end.items.Items;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(EndlessEnd.MODID)
@@ -23,24 +16,12 @@ public class EndlessEnd
     // Define mod id in a common place for everything to reference
     public static final String MODID = "endless_end";
 
-    // Deferred Registers
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
-
-    // Block zone
-    public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-
-    // Item zone
-    public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
-
-    public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder()
-            .alwaysEdible().nutrition(1).saturationModifier(2f).build()));
-    
-
+    // Taking the stuff in the other files and putting it in the game 
     public EndlessEnd(IEventBus modEventBus, ModContainer modContainer)
     {
-        BLOCKS.register(modEventBus);
-        ITEMS.register(modEventBus);
+        Blocks.BLOCKS.register(modEventBus);
+        Blocks.ITEMS.register(modEventBus);
+        Items.ITEMS.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -53,6 +34,6 @@ public class EndlessEnd
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(EXAMPLE_BLOCK_ITEM);
+            event.accept(Blocks.SHATTERBURN_ITEM);
     }
 }
