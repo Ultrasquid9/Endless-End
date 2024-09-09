@@ -1,5 +1,4 @@
 {
-  "itemGroup.endless_end": "Example Mod Tab",
-  "block.endless_end.example_block": "Example Block",
+  "block.endless_end.shatterburn": "Shatterburn",
   "item.endless_end.example_item": "Example Item"
 }

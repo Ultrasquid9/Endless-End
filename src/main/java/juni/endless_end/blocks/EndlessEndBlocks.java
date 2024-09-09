@@ -14,14 +14,14 @@ public class EndlessEndBlocks {
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(EndlessEnd.MODID);
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(EndlessEnd.MODID);
 
-	public static final DeferredBlock<Block> SHATTERBURN = BLOCKS.register("shatterburn", () -> new Block(
+	public static final DeferredBlock<TransparentBlock> SHATTERBURN = BLOCKS.register("shatterburn", () -> new TransparentBlock(
 		BlockBehaviour.Properties.of()
 		.mapColor(MapColor.COLOR_PINK)
 		.sound(SoundType.GLASS)
 		.lightLevel(state -> 15)
 		.noOcclusion()
 		.requiresCorrectToolForDrops()
-		.strength(10.0F, 800.0F)
+		.strength(0.4F, 4.0F)
 	));
 
 	public static final DeferredItem<BlockItem> SHATTERBURN_ITEM = ITEMS.registerSimpleBlockItem("shatterburn", SHATTERBURN);
