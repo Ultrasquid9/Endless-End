@@ -7,7 +7,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredItem;
 
-public class Items {
+public class EndlessEndItems {
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(EndlessEnd.MODID);
 
 	public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder()

@@ -1,7 +1,7 @@
 package juni.endless_end;
 
-import juni.endless_end.blocks.Blocks;
-import juni.endless_end.items.Items;
+import juni.endless_end.blocks.EndlessEndBlocks;
+import juni.endless_end.items.EndlessEndItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -19,9 +19,9 @@ public class EndlessEnd
     // Taking the stuff in the other files and putting it in the game 
     public EndlessEnd(IEventBus modEventBus, ModContainer modContainer)
     {
-        Blocks.BLOCKS.register(modEventBus);
-        Blocks.ITEMS.register(modEventBus);
-        Items.ITEMS.register(modEventBus);
+        EndlessEndBlocks.BLOCKS.register(modEventBus);
+        EndlessEndBlocks.ITEMS.register(modEventBus);
+        EndlessEndItems.ITEMS.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -34,6 +34,6 @@ public class EndlessEnd
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(Blocks.SHATTERBURN_ITEM);
+            event.accept(EndlessEndBlocks.SHATTERBURN_ITEM);
     }
 }

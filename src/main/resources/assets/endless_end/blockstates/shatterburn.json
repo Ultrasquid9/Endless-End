@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "endless_end:blocks/shatterburn_block"
+      "model": "endless_end:block/shatterburn"
     }
   }
 }

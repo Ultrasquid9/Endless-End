@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "endless_end:blocks/shatterburn",
-    "side": "endless_end:blocks/shatterburn"
-  }
-}
